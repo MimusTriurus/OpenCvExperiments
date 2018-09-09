@@ -5,6 +5,7 @@
 #include "StereoVideoCvMatProvider.h"
 
 BaseDisparityMapTuner::BaseDisparityMapTuner( QWidget *parent ) :
+    _stereoDataProvider{ nullptr },
     QWidget( parent )
 {
     connect( &_tmrGetFrames , SIGNAL( timeout( ) ), SLOT( update( ) ) );
