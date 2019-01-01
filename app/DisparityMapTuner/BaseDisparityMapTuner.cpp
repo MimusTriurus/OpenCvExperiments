@@ -34,6 +34,7 @@ void BaseDisparityMapTuner::releaseDataProvider( ) {
 }
 
 void BaseDisparityMapTuner::onOpenFrame( ) {
+    _tmrGetFrames.stop( );
     QString path = QFileDialog::getOpenFileName( 0, "Open Left frame", "", "*.jpg *.png" );
     _leftFrame = cv::imread( path.toStdString( ), 0 );
 
@@ -81,6 +82,6 @@ void BaseDisparityMapTuner::update( ) {
 
     if ( _rightFrame.empty( ) | _leftFrame.empty( ) )
         return;
-    cv::imshow( this->windowTitle( ).toStdString( ), _leftFrame );
+    cv::imshow( ORIGIN_IMG_WIN_NAME.toStdString( ), _leftFrame );
     compute( );
 }

@@ -3,4 +3,5 @@ TEMPLATE = subdirs
 SUBDIRS += \
     DepthMapFilter \
     DisparityMapTuner \
-    VideoFromImgs
+    VideoFromImgs \
+    SlamExperiments

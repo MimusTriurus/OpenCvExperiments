@@ -10,6 +10,8 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 
+#include "opencv2/opencv.hpp"
+
 namespace Ui {
 class MainWindow;
 }
@@ -26,10 +28,12 @@ private:
 
     QLabel _lblLeftImgsDir;
     QLabel _lblRightImgsDir;
+    QLabel _lblCalibFiles;
     QLabel _lblOutputDir;
 
     QPushButton _btnLeftImgsDir;
     QPushButton _btnRightImgsDir;
+    QPushButton _btnOpenCalibFiles;
     QPushButton _btnOutputDir;
     QPushButton _btnStart;
 
@@ -39,6 +43,9 @@ private:
     QFileInfoList _rightImgsList;
 
     QFileInfoList getImgsFileInfo( const QString &dirPath );
+
+    cv::Mat _leftIntr, _rightIntr;
+    cv::Mat _leftDist, _rightDist;
 };
 
 #endif // MAINWINDOW_H
