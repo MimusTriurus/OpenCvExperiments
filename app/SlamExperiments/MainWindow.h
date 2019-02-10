@@ -31,11 +31,32 @@ private:
     std::unique_ptr<ICvMatProvider> _dataProvider;
 
     cv::Mat _leftFrame, _rightFrame;
-
+    // опорные точки
     Ptr<cv::cuda::ORB> _orb;
     Ptr<cv::cuda::DescriptorMatcher> _matcher;
+    // оптический поток
+    Ptr<cv::cuda::SparsePyrLKOpticalFlow> _lkOpticalFlow;
+    Ptr< cuda::CornersDetector> _cornersDetector;
+    GpuMat _prevImgL, _prevImgR;
 
     void compute( );
+
+    void printPoints( Mat points );
+
+    void detectAndMatchKeypoint( );
+    void calcOpticalFlow( );
+
+    vector<Point2f> _goodKeysL, _goodKeysR;
+
+    static void download( const cuda::GpuMat& d_mat, vector< Point2f>& vec );
+    static void download( const cuda::GpuMat& d_mat, vector< uchar>& vec );
+
+    static void download( const vector<Point2f> &inputVec, GpuMat &outputMat );
+
+    static void drawArrows( Mat& frame, const vector< Point2f>& prevPts
+                            , const vector< Point2f>& nextPts
+                            , const vector< uchar>& status
+                            , Scalar line_color = Scalar( 0, 0, 255 ) );
 private slots:
     void on_btnOpenPairFrame_clicked( );
     void on_btnOpenStereoVideo_clicked( );

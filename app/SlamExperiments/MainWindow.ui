@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>285</width>
-    <height>141</height>
+    <height>189</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,27 +15,6 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="btnOpenPairFrame">
-      <property name="text">
-       <string>Open Pair Frame</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnOpenStereoVideo">
-      <property name="text">
-       <string>Open Stereo Video</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btnOpenStereoCam">
-      <property name="text">
-       <string>Open Stereo Camera</string>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QLabel" name="lblMaxFeatures">
       <property name="text">
@@ -55,7 +34,48 @@
        <number>100</number>
       </property>
       <property name="value">
-       <number>1000</number>
+       <number>2500</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblFeatureRadius">
+      <property name="text">
+       <string>Feature radius</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="cbFeatureRadius">
+      <property name="minimum">
+       <double>1.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="value">
+       <double>25.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnOpenPairFrame">
+      <property name="text">
+       <string>Open Pair Frame</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnOpenStereoVideo">
+      <property name="text">
+       <string>Open Stereo Video</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnOpenStereoCam">
+      <property name="text">
+       <string>Open Stereo Camera</string>
       </property>
      </widget>
     </item>

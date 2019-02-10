@@ -14,6 +14,9 @@ public:
     virtual void stop( );
     virtual bool read( cv::Mat &frame );
     virtual bool read( cv::Mat &left, cv::Mat &right );
+
+    cv::Mat projectionMatrix1( ) const;
+    cv::Mat projectionMatrix2( ) const;
 protected:
     ICvMatProvider( ) { }
     cv::VideoCapture _left;

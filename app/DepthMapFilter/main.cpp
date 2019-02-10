@@ -1,31 +1,3 @@
-//#include <QCoreApplication>
-//#include <stdio.h>
-//#include "opencv2/opencv.hpp"
-//#include "opencv2/videoio.hpp"
-//#include "opencv2/core.hpp"
-//#include "opencv2/highgui.hpp"
-
-
-//int main( int argc, char *argv[ ] ) {
-//    QCoreApplication a( argc, argv );
-
-//    cv::VideoCapture _cap;
-
-//    std::cout << "cam is opend " << _cap.open( 0 ) << std::endl;
-
-//    cv::Mat frame;
-
-//    while ( true ) {
-//        std::cout << _cap.read( frame ) << std::endl;
-
-//        if ( !frame.empty( ) )
-//            cv::imshow( "1", frame );
-//        cv::waitKey( 30 );
-//    }
-
-//    return a.exec( );
-//}
-
 #include "opencv2/calib3d.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/imgcodecs.hpp"
@@ -48,8 +20,8 @@ const String keys =
     "{GT             |../data/aloeGT.png| optional ground-truth disparity (MPI-Sintel or Middlebury format) }"
     "{dst_path       |None              | optional path to save the resulting filtered disparity map        }"
     "{dst_raw_path   |None              | optional path to save raw disparity map before filtering          }"
-    "{algorithm      |bm              | stereo matching method (bm or sgbm)                               }"
-    "{filter         |wls_no_conf          | used post-filtering (wls_conf or wls_no_conf)                     }"
+    "{algorithm      |bm                | stereo matching method (bm or sgbm)                               }"
+    "{filter         |wls_no_conf       | used post-filtering (wls_conf or wls_no_conf)                     }"
     "{no-display     |                  | don't display results                                             }"
     "{no-downscale   |                  | force stereo matching on full-sized views to improve quality      }"
     "{dst_conf_path  |None              | optional path to save the confidence map used in filtering        }"
