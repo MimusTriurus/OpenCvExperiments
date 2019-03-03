@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <memory>
 
 #include "ICvMatProvider.h"
 

@@ -4,4 +4,5 @@ SUBDIRS += \
     DepthMapFilter \
     DisparityMapTuner \
     VideoFromImgs \
-    SlamExperiments
+    SlamExperiments \
+    VideoRecorder

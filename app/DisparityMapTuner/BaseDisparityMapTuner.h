@@ -25,8 +25,6 @@ class BaseDisparityMapTuner : public QWidget {
     Q_OBJECT
 public:
     virtual ~BaseDisparityMapTuner( );
-signals:
-public slots:
 protected:
     explicit BaseDisparityMapTuner( QWidget *parent = nullptr );
 

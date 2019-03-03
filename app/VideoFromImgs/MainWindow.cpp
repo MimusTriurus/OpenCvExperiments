@@ -34,6 +34,7 @@ MainWindow::MainWindow( QWidget *parent ) :
     connect( &_btnLeftImgsDir, &QPushButton::clicked, [ this ]( ){
         QString targetDirPath( QFileDialog::getExistingDirectory( 0, "Set Left imgs dir path" ) );
         _leftImgsList = getImgsFileInfo( targetDirPath );
+        qDebug( ) << "_leftImgs" << _leftImgsList;
         this->_lblLeftImgsDir.setText( "Dir: " + targetDirPath );
     } );
     connect( &_btnRightImgsDir, &QPushButton::clicked, [ this ]( ) {
@@ -63,7 +64,9 @@ MainWindow::MainWindow( QWidget *parent ) :
     } );
 
     connect( &_btnStart, &QPushButton::clicked, [ this ]( ) {
-        if ( _stereoVideoDirPath.isEmpty( ) | _leftImgsList.count( ) == 0 | _rightImgsList.count( ) == 0 ) {
+        if ( _stereoVideoDirPath.isEmpty( )
+             | ( _leftImgsList.count( ) == 0 )
+             | ( _rightImgsList.count( ) == 0 ) ) {
             QMessageBox mess;
             mess.setText( "Error. Set stereoVideoDirPath, LeftImgsDir, RightImgsDir" );
             mess.exec( );

@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include "opencv2/opencv.hpp"
-#include "VideoReceiver.h"
 #include "StereoCamCalibrator.h"
 
 class ICvMatProvider {

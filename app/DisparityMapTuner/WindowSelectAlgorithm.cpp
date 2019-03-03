@@ -2,6 +2,7 @@
 #include "WindowStereoBM.h"
 #include "WindowStereoSGBM.h"
 #include "WindowGpuStereoBM.h"
+#include <QApplication>
 #include <QMessageBox>
 
 WindowSelectAlgorithm::WindowSelectAlgorithm( QWidget *parent ) : QWidget( parent ) {
